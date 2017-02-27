@@ -1,0 +1,23 @@
+
+
+https://github.com/MonoGame/MonoGame/issues/5417
+
+ToggleFullScreen not working in latest dev build
+
+ssue Description: Calling graphics.ToggleFullScreen() causes a NullReferenceException to be thrown.
+
+Stacktrace: "System.NullReferenceException: Object reference not set to an instance of an object.\r\n at Microsoft.Xna.Framework.Graphics.GraphicsDevice.PlatformPresent()\r\n at Microsoft.Xna.Framework.Graphics.GraphicsDevice.Present()\r\n at Microsoft.Xna.Framework.UAPGamePlatform.Present()\r\n at Microsoft.Xna.Framework.Game.EndDraw()\r\n at Microsoft.Xna.Framework.Game.DoDraw(GameTime gameTime)\r\n at Microsoft.Xna.Framework.Game.Tick()\r\n at Microsoft.Xna.Framework.UAPGameWindow.Tick()\r\n at Microsoft.Xna.Framewor"
+
+Steps to Reproduce:
+
+Create a MonoGamew Windows 10 Universal Project, targeting .NET Framework 4.6.1 and UWP 10.0.14393.0 (Target and Minimum).
+Build and run => Works
+3: Add graphics.ToggleFullScreen() in game class constructor as follows:
+public Game1()
+{
+graphics = new GraphicsDeviceManager(this);
+graphics.ToggleFullScreen();
+Content.RootDirectory = "Content";
+}
+Rebuild and Run => NullReferenceException
+
