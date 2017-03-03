@@ -1,0 +1,9 @@
+Step 1: reproduce the bug.
+
+Step 2: Reproduce in Debug mode to find the null variable;
+
+Step 3: Finding all mentions of the Variable in the code.
+
+Step 4: Finding the step where it's set to null/ not set to a value.
+
+Step 5: Setting the variable in acrodannce with the path that don't produce a bug.
